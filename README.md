@@ -1,73 +1,103 @@
-# MiniBitcoin
-Aplicação acadêmica de console em C#/.NET para simular carteira de Bitcoin, cotação, compra, venda, extrato e patrimônio consolidado.
+# ₿ MiniBitcoin
 
-> **Atenção:** a cotação inicial de R$ 350.000,00 é fictícia. O usuário pode atualizá-la no menu. Não há integração com corretora, blockchain ou dinheiro real.
+Aplicação acadêmica desenvolvida em C# e .NET para simulação e gerenciamento de uma carteira de Bitcoin.
 
-## Requisitos
-- .NET 10 SDK
-- Git
+O projeto permite trabalhar com saldo em reais (BRL), saldo em Bitcoin (BTC), cotação, operações de compra e venda e acompanhamento do histórico de transações.
 
-## Estrutura
-- `MiniBitcoin.Console`: aplicação de console e regras de negócio.
-- `MiniBitcoin.Tests`: testes unitários com xUnit.
+## 🎯 Objetivo do Projeto
 
-## Executar
-Na pasta raiz:
+Desenvolver uma aplicação de console que simule operações básicas de uma carteira de criptomoedas, aplicando conceitos de programação orientada a objetos, regras de negócio e testes automatizados.
+
+## 🚀 Funcionalidades
+
+- **Gestão de carteira:** controle dos saldos em BRL e BTC.
+- **Cotação do Bitcoin:** consulta e utilização do preço do Bitcoin.
+- **Compra de Bitcoin:** simulação de compras utilizando saldo disponível em reais.
+- **Venda de Bitcoin:** conversão de Bitcoin em reais.
+- **Histórico de transações:** registro das operações realizadas.
+- **Patrimônio consolidado:** acompanhamento do valor total da carteira.
+
+## 🛠️ Tecnologias Utilizadas
+
+| Tecnologia | Aplicação |
+|---|---|
+| C# | Linguagem de programação |
+| .NET 10 | Plataforma de desenvolvimento |
+| xUnit | Testes unitários |
+| Git | Controle de versão |
+| GitHub | Hospedagem do código |
+
+## 📁 Estrutura do Projeto
+
+```text
+MiniBitcoin/
+│
+├── MiniBitcoin.Console/
+│   └── Aplicação principal
+│
+├── MiniBitcoin.Tests/
+│   └── Testes unitários
+│
+├── MiniBitcoin.sln
+├── .gitignore
+└── README.md
+```
+
+## ⚙️ Como executar o projeto
+
+### 1. Pré-requisitos
+
+- .NET 10 SDK instalado.
+- Git instalado.
+- Visual Studio Code ou outra IDE compatível.
+
+### 2. Clonar o repositório
+
+```bash
+git clone https://github.com/William-lazaro/MiniBitcoin.git
+```
+
+### 3. Entrar na pasta
+
+```bash
+cd MiniBitcoin
+```
+
+### 4. Restaurar dependências
+
 ```bash
 dotnet restore
+```
+
+### 5. Executar a aplicação
+
+```bash
 dotnet run --project MiniBitcoin.Console/MiniBitcoin.Console.csproj
 ```
 
-## Testar
+## 🧪 Testes Automatizados
+
+O projeto utiliza xUnit para verificar o comportamento das funcionalidades e as regras de negócio.
+
+Para executar os testes, utilize:
+
 ```bash
 dotnet test
 ```
 
-## Funcionalidades e regras
-- Carteira com saldo em BRL e BTC; não aceita saldos negativos.
-- Débitos exigem valores positivos e saldo suficiente.
-- Cotação simulada configurável pelo menu.
-- Compra converte BRL em BTC pela cotação atual.
-- Venda converte BTC em BRL pela cotação atual.
-- BTC tratado com até 8 casas decimais.
-- Extrato registra tipo, quantidades, cotação e data/hora.
-- Patrimônio = saldo BRL + (saldo BTC × cotação atual).
-- Não há taxas de operação nesta versão, pois a lista não exige esse cálculo.
+**Última validação realizada:** 17 testes aprovados e nenhuma falha.
 
-## TDD e Conventional Commits
-A lista solicita escrever os testes antes da implementação. Os testes estão organizados por carteira, cotação e operações. Para demonstrar o fluxo de commits solicitado, use mensagens compatíveis com as etapas realmente realizadas:
-```bash
-git add .
-git commit -m "chore: initial project structure with console and xunit apps"
-git add .
-git commit -m "test(carteira): add unit tests for wallet balance validation"
-git add .
-git commit -m "feat(carteira): implement wallet entity and initial balance rules"
-git add .
-git commit -m "test(transacao): add unit tests for bitcoin buy and sell operations"
-git add .
-git commit -m "feat(transacao): implement bitcoin purchase and sale logic with quote validation"
-git add .
-git commit -m "test(extrato): add unit tests for transaction ledger and portfolio valuation"
-git add .
-git commit -m "feat(extrato): implement transaction history and portfolio summary"
-git add .
-git commit -m "feat(console): implement interactive menu for bitcoin wallet application"
-git add .
-git commit -m "refactor(core): improve code readability and organize namespaces"
-git add .
-git commit -m "docs: add comprehensive instructions in README.md"
-```
-> O pacote entregue contém o estado final do código; não contém um histórico Git retroativo. Para comprovar TDD, faça os commits durante o desenvolvimento, sem inventar datas ou etapas.
+## 📚 Conceitos Aplicados
 
-## Publicar no GitHub
-Crie um repositório público vazio chamado `MiniBitcoin` e execute na pasta raiz:
-```bash
-git init
-git add .
-git commit -m "chore: initial project structure with console and xunit apps"
-git branch -M main
-git remote add origin URL_DO_SEU_REPOSITORIO
-git push -u origin main
-git log --oneline
-```
+- Programação orientada a objetos.
+- Separação entre aplicação e testes.
+- Testes unitários.
+- Validação de regras de negócio.
+- Desenvolvimento orientado a testes (TDD).
+- Versionamento com Git.
+- Conventional Commits.
+
+## 👨‍💻 Projeto Acadêmico
+
+Projeto desenvolvido como atividade acadêmica da disciplina de **Gestão e Qualidade de Software**.
+
